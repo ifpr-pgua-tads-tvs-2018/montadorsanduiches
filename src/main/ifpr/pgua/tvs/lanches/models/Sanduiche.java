@@ -6,6 +6,8 @@ import java.util.List;
 public class Sanduiche {
 
     private double valorFinal;
+    private double pesoFinal;
+
     private List<Item> items;
 
     public Sanduiche(){
@@ -30,7 +32,11 @@ public class Sanduiche {
         return valorFinal;
     }
 
+    public double getPesoFinal() {
+        return pesoFinal;
+    }
 
-
-
+    public void setPesoFinal(double pesoFinal) {
+        this.pesoFinal = pesoFinal;
+    }
 }

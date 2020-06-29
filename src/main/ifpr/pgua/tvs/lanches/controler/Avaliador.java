@@ -5,16 +5,20 @@ import ifpr.pgua.tvs.lanches.models.Sanduiche;
 
 public class Avaliador {
 
-    private double valorMaiorItem=Double.MIN_VALUE;
-    private Item maiorItem;
+    public boolean avalia(Sanduiche sanduiche){
 
-    public void avalia(Sanduiche sanduiche){
+        int contPaes = 0;
 
         for(Item item:sanduiche.getItems()){
-            if(item.getValor() > valorMaiorItem){
-                maiorItem = item;
-                valorMaiorItem = item.getValor();
+            if(item.getDescricao().equals("Pao")){
+                contPaes +=1;
             }
         }
+
+        if(contPaes > 1){
+            return false;
+        }
+
+        return true;
     }
 }
