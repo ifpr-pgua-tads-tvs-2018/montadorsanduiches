@@ -1,5 +1,6 @@
 package ifpr.pgua.tvs.lanches;
 
+import ifpr.pgua.tvs.lanches.builders.ItemBuilder;
 import ifpr.pgua.tvs.lanches.controler.Avaliador;
 import ifpr.pgua.tvs.lanches.models.Item;
 import ifpr.pgua.tvs.lanches.models.Sanduiche;
@@ -12,9 +13,15 @@ public class TestaAvaliador {
     public void sanduicheComPao_DeveRetornarTrue(){
 
         //cenario
-        Item pao = new Item("Pao",2.0,0.2);
-        Item queijo = new Item("Queijo",2.5,0.3);
-        Item presunto = new Item("Presunto",3.2,0.25);
+        Item pao = ItemBuilder.umItem()
+                              .comDescricao("Pão")
+                              .agora();
+        Item queijo = ItemBuilder.umItem()
+                                 .comDescricao("Queijo")
+                                 .agora();
+        Item presunto = ItemBuilder.umItem()
+                                   .comDescricao("Presunto")
+                                   .agora();
 
         Sanduiche sanduiche = new Sanduiche();
         sanduiche.adiciona(pao);
